@@ -11,7 +11,7 @@ $repo_dir = './'.$payload->repository->name;
 
 if ( ! is_dir($repo_dir) )
 {
-	exec('git clone '.$payload->clone_url);
+	exec('git clone '.$payload->repository->clone_url);
 }
 
 exec('git -C '.$repo_dir.' pull');
