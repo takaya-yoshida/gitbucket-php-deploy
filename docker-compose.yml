@@ -1,0 +1,15 @@
+webserver:
+  build: ./php56
+  ports:
+    - "80:80"
+  expose:
+    - "80"
+  volumes:
+    - "./vol/sites:/var/www/html"
+gitbucket:
+  image: "f99aq8ove/gitbucket"
+  container_name: gitbucket
+  volumes:
+    - "./vol/gitbucket:/gitbucket"
+  ports:
+    - "8080:8080"
